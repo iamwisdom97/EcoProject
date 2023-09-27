@@ -12,7 +12,7 @@ public class ExternalService {
 
     private final BuildingInfoService buildingInfoService;
 
-    public String getBuildingInformation() throws IOException {
-        return buildingInfoService.getBuildingInformation();
+    public String getBuildingInformation(String sigunguCd, String bjdongCd) throws IOException {
+        return buildingInfoService.getBuildingInformation(sigunguCd, bjdongCd);
     }
 }

@@ -20,11 +20,11 @@ public class BuildingInfoService {
 
     String serviceKey = "2Stxhk2HR66yDCmRIqwi%2FqAVQIdRindin2p1UxoRvNMMKpZ9uxDxccAaPA2BHExS3rIdnTYyJ98UWecRCRwTZQ%3D%3D";
 
-    public String getBuildingInformation() throws IOException {
+    public String getBuildingInformation(String sigunguCd, String bjdongCd) throws IOException {
         StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1613000/BldRgstService_v2/getBrTitleInfo"); /*URL*/
         urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey); /*Service Key*/
-        urlBuilder.append("&" + URLEncoder.encode("sigunguCd", "UTF-8") + "=" + URLEncoder.encode("11680", "UTF-8")); /*행정표준코드*/
-        urlBuilder.append("&" + URLEncoder.encode("bjdongCd", "UTF-8") + "=" + URLEncoder.encode("10300", "UTF-8")); /*행정표준코드*/
+        urlBuilder.append("&" + URLEncoder.encode("sigunguCd", "UTF-8") + "=" + URLEncoder.encode(sigunguCd, "UTF-8")); /*행정표준코드*/
+        urlBuilder.append("&" + URLEncoder.encode("bjdongCd", "UTF-8") + "=" + URLEncoder.encode(bjdongCd, "UTF-8")); /*행정표준코드*/
 
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();

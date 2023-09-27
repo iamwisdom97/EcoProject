@@ -18,8 +18,8 @@ public class ExternalController {
     private final ExternalService externalService;
 
     @GetMapping("")
-    @Operation(description = "건축물대장을 조회하는 OpenAPI")
-    public ResponseEntity<String> getBuildingInformation() throws IOException {
-        return ResponseEntity.ok(externalService.getBuildingInformation());
+    @Operation(summary = "건축물대장을 조회하는 OpenAPI", description = "파라미터 예시 : sigunguCd:11680, bjdongCd:10300")
+    public ResponseEntity<String> getBuildingInformation(String sigunguCd, String bjdongCd) throws IOException {
+        return ResponseEntity.ok(externalService.getBuildingInformation(sigunguCd, bjdongCd));
     }
 }
